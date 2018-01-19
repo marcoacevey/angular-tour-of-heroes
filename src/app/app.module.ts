@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { HeroService } from './hero.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
 import { AppRountingModule } from './/app-rounting.module';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { AppRountingModule } from './/app-rounting.module';
     HeroesComponent,
     HeroDetailComponent,
     DashboardComponent,
-    MessagesComponent
+    MessagesComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,

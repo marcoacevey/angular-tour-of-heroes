@@ -42,6 +42,20 @@ export class HeroService {
   }
 
   /**
+   * Retorna a relação de heróis filtrados pelo termo de busca.
+   * @param term Termo para ser buscado.
+   */
+  searchHeroes(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`api/heroes/?name=${term}`).pipe(
+      tap(_ => this.log(`fount heroes matching "${term}"`)),
+      catchError(this.handleError<Hero[]>(`searchHeroes`, []))
+    );
+  }
+
+  /**
    * Insere um herói
    * @param hero Herói para inserir.
    */
